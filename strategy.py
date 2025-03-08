@@ -5,7 +5,6 @@ from config import SYMBOL
 price_history = []
 
 def calculate_macd(prices):
-    """Calculate MACD and Signal Line for price history."""
     df = pd.DataFrame(prices, columns=["close"])
     df["12EMA"] = df["close"].ewm(span=12, adjust=False).mean()
     df["26EMA"] = df["close"].ewm(span=26, adjust=False).mean()
@@ -14,7 +13,6 @@ def calculate_macd(prices):
     return df
 
 async def handle_trade(data):
-    """Handles real-time trade data."""
     global average_buy_price, position_qty
 
     latest_price = data.price
