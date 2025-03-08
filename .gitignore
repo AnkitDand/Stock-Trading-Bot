@@ -1,0 +1,7 @@
+__pycache__/
+
+credentials.csv
+config.py
+
+trade_logic.py
+trade_logic_2.py
